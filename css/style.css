@@ -6,6 +6,15 @@
     --dark: #001D23;
 }
 
+/* Typography: Public Sans for body text, Poppins for headings */
+body {
+    font-family: 'Public Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, .display-4, .display-6, .navbar-brand h1 {
+    font-family: 'Poppins', 'Public Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
 .back-to-top {
     position: fixed;
     display: none;
@@ -808,6 +817,77 @@ html {
     transform: scale(1.1);
 }
 
+/* Service icons (Font Awesome) */
+.service-icon {
+    width: 84px;
+    height: 84px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary);
+    color: #ffffff;
+    font-size: 32px;
+    transition: transform .4s ease, box-shadow .4s ease;
+}
+
+.service-item:hover .service-icon {
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .12);
+}
+
+.service-icon i {
+    line-height: 1;
+}
+
+/* Causes / Feature Services icons */
+.causes-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 0.75rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary);
+    color: #fff;
+    font-size: 22px;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.causes-item:hover .causes-icon {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0,0,0,.12);
+}
+
+/* Read-more collapse content on service cards */
+.service-more {
+    background: #fbfcfd;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: .5rem;
+    color: #333;
+}
+
+.service-item .btn-outline-primary {
+    font-weight: 600;
+}
+
+/* Improved readability: constrained measure and left-aligned paragraphs */
+.service-item p,
+.service-item .service-more p,
+.causes-item .text-center p,
+.causes-item p {
+    text-align: left;
+    max-width: 58ch; /* comfortable measure for line length */
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.65;
+    hyphens: none;
+    color: #333;
+}
+
 /* Smooth zoom on causes image already handled; add lift */
 .causes-item {
     transition: transform .4s ease, box-shadow .4s ease;
@@ -892,4 +972,11 @@ html {
     display: flex;
     justify-content: center;
     overflow: hidden;
+}
+
+/* Reduce spacing above Featured Stories after removing Live Feeds */
+#featured-stories {
+    padding-top: 2rem !important;
+    padding-bottom: 3rem !important;
+    margin-top: 0.5rem;
 }
